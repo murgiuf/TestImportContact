@@ -23,7 +23,7 @@ development:
 #   <<: *default
 #   database: RUPINVENTARIOS_PROD
 #
-# production:
-#   <<: *default
-#   database: DBPOSTGRES
-#   password: <%= ENV['passpostgres'] %>
+production:
+  <<: *default
+  database: IMPORT_CONTACT
+  password: <%= ENV['passpostgres'] %>
