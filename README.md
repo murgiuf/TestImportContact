@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este repositorio se ha creado para el examen técnico de Freddy Muro G. a petición de Koombea.
 
-Things you may want to cover:
+Consideraciones:
 
-* Ruby version
+* El sistema se encuentra desplegado en [heroku](https://testimportcontact.herokuapp.com/)
+ * primer usuario: usuario1@test.com/123123
+ * segundo usuario: usuario2@test.com/123123
 
-* System dependencies
+* El sistema se encuentra integrado con un S3 para alojar los .csv utilizados.
 
-* Configuration
+* El sistema realiza las validaciones requeridas de los campos de la interfaz de carga.
 
-* Database creation
+* Se comparte adjunto de plantilla con mapeo default [aqui](/contactos_example.csv)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Se comparte adjunto de plantilla con de "Nacimiento" como primera columna [aqui](/contactos_map2.csv)
