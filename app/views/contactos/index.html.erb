@@ -15,7 +15,7 @@
             </div>
             <div class="panel-body">
               <% if !params[:from_page].blank? && params[:from_page] == "carga" %>
-                <h4>Mostrando registros de la carga <%= @carga.archivo%></h4>
+                <h4>Mostrando registros de la carga <%= @carga.nombre_archivo%></h4>
                 <h4>Con estado <%= @estado%></h4>
               <% end %>
 
