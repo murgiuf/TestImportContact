@@ -8,7 +8,8 @@ class Contacto < ApplicationRecord
       return
     end
 
-    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.dig(:secret_key_base)[0..31])
+    mi_llave = Rails.application.credentials.dig(:secret_key_base).nil? ? ENV['SECRET_KEY_BASE'] : Rails.application.credentials.dig(:secret_key_base)
+    crypt = ActiveSupport::MessageEncryptor.new(mi_llave[0..31])
     decrypted_back = crypt.decrypt_and_verify(tarjeta)
     return decrypted_back.split(//).last(4).join
 
@@ -17,7 +18,9 @@ class Contacto < ApplicationRecord
   end
 
   def self.encripta_tarjeta(tarjeta)
-    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.dig(:secret_key_base)[0..31])
+
+    mi_llave = Rails.application.credentials.dig(:secret_key_base).nil? ? ENV['SECRET_KEY_BASE'] : Rails.application.credentials.dig(:secret_key_base)
+    crypt = ActiveSupport::MessageEncryptor.new(mi_llave[0..31])
     encrypted_data = crypt.encrypt_and_sign(tarjeta)
   end
 
